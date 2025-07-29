@@ -1,4 +1,5 @@
 # 📈 GraphiX - 2D Mathematical Visualizer
+
 <img src="static/logo.png" alt="Logo" width="150" align="right" style="margin-left: 20px; margin-bottom: 20px;" />
 
 
