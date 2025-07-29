@@ -1,4 +1,4 @@
-# 📈 GraphiX - 2D Mathematical Visualizer
+# GraphiX - 2D Mathematical Visualizer
 
 <img src="static/logo.png" alt="Logo" width="100" align="right" style="margin-left: 20px; margin-bottom: 20px;" />
 
@@ -8,7 +8,7 @@
 
 ---
 
-## GraphiX v1.0
+## 📈 GraphiX v1.0
 
 GraphiX is a powerful and interactive web-based 2D graphing calculator. Built with vanilla HTML, CSS, and JavaScript, it provides a modern, responsive, and intuitive interface for plotting functions, analyzing data points, and performing measurements. Its design is inspired by professional tools, featuring a "liquid glass" aesthetic with light and dark themes.
 
