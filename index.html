@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GraphiX - Visualizador Matemático</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-title">GraphiX</div>
+                <div class="controls">
+                    <button class="btn" id="lang-toggle">EN/ES</button>
+                    <button class="btn" id="themeToggle" data-lang-key="theme">🌓 Tema</button>
+                    <button class="btn" id="zoomIn">🔍+</button>
+                    <button class="btn" id="zoomOut">🔍-</button>
+                    <button class="btn" id="resetView" data-lang-key="origin">⟲ Origen</button>
+                    <button class="btn" id="exportImage" data-lang-key="export">📷 Exportar</button>
+                </div>
+            </div>
+        </header>
+        
+        <div class="main-content">
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-section-header" id="equation-section-header">
+                        <h3 data-lang-key="addEquation">Agregar Ecuación</h3>
+                        <span class="toggle-arrow" style="transform: rotate(180deg);">▼</span>
+                    </div>
+                    <div class="sidebar-section-content" id="equation-section-content">
+                        <div class="equation-input-container">
+                            <input type="text" class="equation-input" id="equationInput" placeholder="ej: x^2, sin(x), log(x)">
+                            <button class="add-btn" id="addEquation" data-lang-key="add">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-section-header" id="points-section-header"><h3 data-lang-key="pointsTable">Tabla de Puntos</h3><span class="toggle-arrow">▼</span></div>
+                    <div class="sidebar-section-content collapsed" id="points-section-content">
+                        <p class="points-instructions" data-lang-key="pointsInstructions">Añada puntos manualmente o importe un archivo .csv (dos columnas: x,y, sin encabezados).</p>
+                        <div class="points-table-container"><table class="points-table"><thead><tr><th>X</th><th>Y</th><th></th></tr></thead><tbody id="points-table-body"></tbody></table></div>
+                        <div class="points-controls">
+                            <button class="btn" id="add-point-btn" style="flex: 1;" data-lang-key="addPoint">Añadir Punto</button>
+                            <label for="csv-upload" class="btn" style="flex: 1; text-align: center;" data-lang-key="importCsv">Importar CSV</label>
+                            <input type="file" id="csv-upload" accept=".csv" style="display: none;">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sidebar-section" style="flex: 1; display: flex; flex-direction: column;">
+                    <div class="sidebar-section-header no-mb"><h3 data-lang-key="activeEquations">Ecuaciones Activas</h3></div>
+                    <div class="sidebar-section-content">
+                        <div class="equations-list" id="equationsList"></div>
+                    </div>
+                </div>
+            </aside>
+            
+            <div class="canvas-container">
+                <canvas id="graphCanvas"></canvas>
+                <div class="tools-panel">
+                    <div class="tool-result" id="tool-result-display" data-lang-key="tools">Herramientas</div>
+                    <button class="tool-btn" id="tool-distance" title="Medir Distancia"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M21.41 19.59l-2.83-2.83-1.41 1.41 2.83 2.83 1.41-1.41zM6.83 8.24L5.41 6.83 4 8.24l1.41 1.41 1.42-1.41zM20 4v2h-2V4h2m-2-2h-2v2h2V2zM6 2H4v2h2V2zM4 6V4h2v2H4zm14.71.29l-14 14L4 18.29l14-14 1.71 1.71z"/></svg></button>
+                    <button class="tool-btn" id="tool-angle" title="Medir Ángulo"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M21 8V6l-3 3 3 3v-2h2v4h-4v-2h2l-3-3-3 3h2v2H6V6h15z"/></svg></button>
+                    <button class="tool-btn" id="tool-clear" title="Limpiar Medidas"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button>
+                </div>
+                <div class="info-panel" id="infoPanel">Posición: (0, 0) | Zoom: 1.0x</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
