@@ -1,13 +1,12 @@
-<div align="center">
-
 # 📈 GraphiX - 2D Mathematical Visualizer
 
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-![Languages](https://img.shields.io/badge/Made%20with-HTML%2C%20CSS%2C%20JS-blue.svg)
-![Version](https://img.shields.io/badge/Version-1.0-green.svg)
-![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)
+<img src="static/logo.png" alt="Logo" width="150" align="right" style="margin-left: 20px; margin-bottom: 20px;" />
 
-</div>
+
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
 GraphiX is a powerful and interactive web-based 2D graphing calculator. Built with vanilla HTML, CSS, and JavaScript, it provides a modern, responsive, and intuitive interface for plotting functions, analyzing data points, and performing measurements. Its design is inspired by professional tools, featuring a "liquid glass" aesthetic with light and dark themes.
 
@@ -77,7 +76,7 @@ You only need a modern web browser (like Chrome, Firefox, or Edge).
 
 1.  Clone the repo:
     ```sh
-    git clone [https://github.com/your_username/GraphiX.git](https://github.com/your_username/GraphiX.git)
+    git clone https://github.com/jesusvasquezjr3/GraphiX
     ```
 2.  Navigate to the project directory:
     ```sh
@@ -98,10 +97,60 @@ You only need a modern web browser (like Chrome, Firefox, or Edge).
 
 ---
 
+## 🏗️ Workflow Diagram
+
+The following diagram illustrates the application's general workflow, from user interaction to canvas rendering.
+
+```mermaid
+graph TD
+    A[Start: Page Load] --> B{Initialize GraphiX};
+    B --> C{Setup Event Listeners};
+    C --> D[Wait for User Interaction];
+
+    subgraph User Actions
+        D --> E[Add/Edit Equation];
+        D --> F[Add/Import Points];
+        D --> G[Interact with Canvas];
+        D --> H[Change Settings];
+    end
+
+    E --> I{Validate Expression};
+    I -- Valid --> J[Update Equations Array];
+    I -- Invalid --> K[Show Error Alert];
+    J --> L[Update UI Lists];
+    L --> M{Call Draw Function};
+
+    F --> N[Update Points Array];
+    N --> L;
+
+    G -- Pan/Zoom --> O[Update Viewport];
+    O --> M;
+    G -- Use Tool --> P[Update Measurements];
+    P --> M;
+
+    H -- Theme/Language --> Q[Update UI & Settings];
+    Q --> M;
+
+    subgraph Rendering Pipeline
+        M --> R[Request Animation Frame];
+        R --> S[Clear Canvas];
+        S --> T[Draw Grid & Axes];
+        T --> U[Draw Functions];
+        U --> V[Draw Data Points];
+        V --> W[Draw Measurements];
+        W --> X[Render Frame];
+    end
+
+    X --> D;
+    K --> D;
+```
+
+-----
+
 ## 📁 File Structure
 
 The project is organized into three main files for clarity and modularity:
 
-* **`index.html`**: The main HTML file that defines the structure of the application.
-* **`style.css`**: The stylesheet that contains all the visual rules, including colors, layout, and responsiveness.
-* **`app.js`**: The core JavaScript file that contains all the application logic, including the `GraphiX` and `MathParser` classes, event handling, and canvas drawing functions.
+  * **`index.html`**: The main HTML file that defines the structure of the application.
+  * **`style.css`**: The stylesheet that contains all the visual rules, including colors, layout, and responsiveness.
+  * **`app.js`**: The core JavaScript file that contains all the application logic, including the `GraphiX` and `MathParser` classes, event handling, and canvas drawing functions.
