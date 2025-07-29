@@ -12,8 +12,8 @@
 
 GraphiX is a powerful and interactive web-based 2D graphing calculator. Built with vanilla HTML, CSS, and JavaScript, it provides a modern, responsive, and intuitive interface for plotting functions, analyzing data points, and performing measurements. Its design is inspired by professional tools, featuring a "liquid glass" aesthetic with light and dark themes.
 
-![Main Interface](static/screenshot-1.png)
-*Figure 1. Main application interface in light theme.*
+![Main Interface](static/screenshot-4.png)
+*Figure 1. Main application interface in dark theme.*
 
 ---
 
