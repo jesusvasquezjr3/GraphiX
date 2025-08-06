@@ -46,7 +46,7 @@ GraphiX comes packed with a wide range of features for both educational and anal
     * 📊 All points are rendered on the graph in real-time.
 
 ![Points Table](static/screenshot-2.png)
-*Figure 2. The collapsible points table for manual data entry and CSV import.*
+*Figure 2. The collapsible points table for manual data entry and CSV import.* 
 
 * **Measurement Tools**:
     * 🛠️ A floating toolbar on the canvas for easy access.
